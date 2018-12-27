@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Title</title>
+
+    <style>
+            * {
+                box-sizing: border-box;
+            }
+    
+            input[type=text], select, textarea {
+                width: 100%;
+                border-radius: 4px;
+                resize: vertical;
+                padding: 5px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 1px solid #665b53;
+                outline: none;
+                font-size: 1.0em;
+                font-family: 'Catamaran', sans-serif;
+            }
+
+            label{
+                font-size: 1.0em;
+                font-family: 'Catamaran', sans-serif;
+                color: #000000
+            }
+    
+            input[type=text]:focus {
+                background-color: #adc7c8;
+                border: 1px solid #665b53;
+                font-size: 1.0em;
+                font-family: 'Catamaran', sans-serif;
+            }
+    
+            select {
+                width: 100%;
+                border-radius: 4px;
+                resize: vertical;
+                padding: 5px;
+                margin: 2px 0;
+                box-sizing: border-box;
+                border: 1px solid #665b53;
+                outline: none;
+                font-size: 1.0em;
+                font-family: 'Catamaran', sans-serif;
+            }
+    
+            .button {
+            -webkit-transition-duration: 0.4s;
+            transition-duration: 0.4s;
+            background-color: #adc7c8;
+            border: none;
+            color: black;
+            padding: 5px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            border-radius: 8px;
+        }
+
+        .button:hover {
+            background-color: #665b53;
+            /* Green */
+            color: white;
+        }
+    
+            input {
+                padding: 12px 12px 12px 0;
+                display: inline-block;
+                font-size: 1.0em;
+                font-family: 'Catamaran', sans-serif;
+            }
+    
+            .container {
+                border-radius: 5px;
+                background-color: #f2f2f2;
+                padding: 20px;
+                margin: 0px;
+            }
+
+            .right{
+                overflow: hidden;
+                width: 59%;
+                padding: 10px;
+                display: inline-block;
+                margin-left: 1px;
+                background: grey;
+                min-width: 100px;
+                margin-top: 1px;
+            }
+
+            .left{
+                background: pink;
+                width: 40%;
+                overflow: hidden;
+                padding: 10px;
+                display: inline-block;
+                min-width: 350px;
+                margin-top: 1px;
+            }
+    
+            .col-25 {
+                float: left;
+                width: 25%;
+                margin-top: 6px;
+            }
+    
+            .col-75 {
+                float: left;
+                width: 75%;
+                margin-top: 6px;
+            }
+    
+            /* Clear floats after the columns */
+    
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            .nowrap {
+  white-space: nowrap ;
+}
+    
+            /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    
+    
+        </style>
+    
+</head>
+<body>
+<!--
+<h1>GuestList Page</h1>
+<p><a th:href="@{/usersite}">usersite</a></p>
+<p><a th:href="@{/budget}">budget</a></p>
+<p><a th:href="@{/logout}">Log out</a></p>
+<p><a th:href="@{/checklist}">checklist</a></p>
+-->
+<div class="container">
+<div class="left">
+    <form method="post" action="/guestlist">
+    <div class="row">
+    <!--Firstname-->
+        <div class="col-25">
+                <label for="fname">First Name</label>
+            </div>
+        <div class="col-75">
+                <input type="text" id="fname" name="firstname" placeholder="Your name.."/>
+            </div>
+    <!--Lastname-->
+        <div class="col-25">
+                <label for="lname">Lastname</label>
+            </div>
+        <div class="col-75">
+                <input type="text" id="lname" name="lastname" placeholder="Your lastname.."/>
+        </div>
+    <!--Gender-->
+        <div class="col-25">
+                <label for="gender">Gender</label>
+            </div>
+        <div class="col-75">
+                <input type="text" id="gender" name="gender" placeholder="Your gender.."/>
+        </div>
+    <!--Tomt-->    
+        <div class="col-25">
+                 <!--Tomt här-->
+            </div>
+        <div class="col-75">
+                <!--Tomt här-->
+        </div>
+    <!--Knapp-->
+        <div class="row">
+            <div class="col-25">
+                <!--Tomt här eller knappen-->
+            </div>
+            <div class="col-75">
+                    <input class="button" type="submit" value="add new guest"/>
+            </div>
+        </div>
+    </div>
+    </form></div>
+<div class="right">
+    text
+    text
+        <label class="wrapper" th:each="guest : ${guests}">
+                <span class="nowrap" th:text="${guest.firstname}"/>
+                <span class="nowrap" th:text="${guest.lastname}"/>
+                <span class="nowrap" th:text="${guest.gender}"/>
+                <!--Ändras sen när vi grejar med designen-->
+            </label>
+</div>
+</div>
+
+
+
+
+<!--<label class="wrapper" th:each="guest : ${guests}"/>-->
+
+
+</body>
+</html>

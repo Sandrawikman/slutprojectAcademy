@@ -1,0 +1,49 @@
+<div class="col-sm-3 sidenav">
+        <ul class="nav nav-pills nav-stacked">
+            <form method="post" action="/budget">
+                <input type="hidden" name="eventId" th:value="${eventId}"/>
+                <p>Add item to budget:</p>
+                <input type="text" name="item" placeholder="item.."/>
+                <p>Price:</p>
+                <input type="text" name="price" placeholder="100...."/>
+                <p></p>
+                <input class="button" type="submit" value="add new item" />
+                <p> </p> <span th:text="${InvalidInput}"></span>
+            </form>
+        </ul>
+    </div>
+    <div class="col-sm-9">
+        <div class="container">
+            <h2>Budget for your event</h2>
+            <p></p>
+            <p></p>
+
+            <div th:each="item : ${budgetList}">                <!-- Ska snyggas till i designen -->
+                <button class="colTest">
+                    <span th:text="${item.item}"> </span>
+                    <span th:text="${item.price}"> </span>
+                </button>
+                <div class="colTestEdit">
+                    <form method="post" action="/updateBudget">          <!-- Ska snyggas till i designen -->
+                        <input type="hidden" name="eventId" th:value="${eventId}"/>
+                        <input type="hidden" name="id" th:value="${item.id}"/>
+                        <p>Edit item:
+                            <input type="text" name="item" placeholder="item.."/></p>
+                        <p>Edit price:
+                            <input type="text" name="price" placeholder="3000.."/></p>
+                        <p></p>
+                        <input class="button" type="submit" value="Edit item"/>
+                        <p></p>
+                    </form>
+                    <form method="get" action="/deleteBudget">
+                        <input type="hidden" name="eventId" th:value="${eventId}"/>
+                        <input type="hidden" name="id" th:value="${item.id}"/>
+                        <input class="button" type="submit" value="Delete item"/>
+                    </form>
+                </div>
+            </div>
+            <p><b>Total: <span th:text="${total}"/></b></p>
+        </div>
+    </div>
+</div>
+</div>

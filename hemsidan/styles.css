@@ -1,0 +1,168 @@
+
+.navbar {
+  margin-bottom: 0;
+  border-radius: 0;
+  background-color: #adc7c8;       /*bakgrund på navbar*/
+  color: #665b53;                  /*ändrar fast textfärg i navbar, ej länkar*/
+  padding: 1% 0;
+  font-size: 1.2em;
+  border: 0;
+}
+.navbar-brand {
+  float: left;
+  min-height: 0px;
+  padding: 0 10px 5px;
+}
+.navbar-inverse .navbar-nav .active a, .navbar-inverse .navbar-nav .active a:focus, .navbar-inverse .navbar-nav .active a:hover{
+  color: #665b53 ;
+  background-color: #adc7c8;   /*ändrar bakgrund på knapp i navbar*/
+}
+.navbar-inverse .navbar-nav li a{
+  color: #665b53;              /*ändrar länkfärg i navbar*/
+}
+.carousel-caption{
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
+}
+.btn {
+  font-size: 18px;
+  color: #FFF;
+  padding: 12px 22px;
+  background-color: #adc7c8 ;
+  border: 2px solid #FFF;
+}
+.container{
+  margin: 4% auto;
+}
+#icon {
+  max-width: 200px;
+  margin: 1% auto;
+}
+footer{
+  width: 100%;
+  background-color: #adc7c8 ;
+  padding:5%;
+  color: #FFF;
+}
+
+
+/* FA = Social media links  */
+.fa {
+  padding: 15px;
+  font-size: 25px;
+  color: #665b53;
+}
+.fa:hover{
+  color: rgb(175, 108, 108);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .fa{
+font-size: 20px;
+padding: 10px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .carousel-caption {
+    display: none;
+  }
+  #icon{
+    max-width: 150px;
+  }
+  h2 {
+    font-size: 1.7em;
+  }
+}
+
+
+
+.nowrap {
+    white-space: nowrap !important;
+}
+.test {
+    background: pink;
+    padding: 10px;
+}
+
+.test2 {
+    background: blue;
+    padding: 10px;
+}
+
+.guest {
+    padding: 10px;
+    border-color: #000000;
+}
+
+input[type=text],
+select,
+textarea {
+    width: 100%;
+    border-radius: 4px;
+    resize: vertical;
+    padding: 5px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border: 1px solid #665b53;
+    outline: none;
+    font-size: 1.0em;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#labeltext {
+    font-size: 1.0em;
+    font-family: 'Catamaran', sans-serif;
+    color: #000000;
+    font-weight: normal !important;
+}
+
+input[type=text]:focus {
+    background-color: #adc7c8;
+    border: 1px solid #665b53;
+    font-size: 1.0em;
+    font-family: 'Catamaran', sans-serif;
+}
+
+select {
+    width: 100%;
+    border-radius: 4px;
+    resize: vertical;
+    padding: 5px;
+    margin: 2px 0;
+    box-sizing: border-box;
+    border: 1px solid #665b53;
+    outline: none;
+    font-size: 1.0em;
+    font-family: 'Catamaran', sans-serif;
+}
+
+#button {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: #adc7c8;
+    border: none;
+    color: black;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+#button:hover {
+    background-color: #665b53;
+    /* Green */
+    color: white;
+}
+
+input {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-size: 1.0em;
+    font-family: 'Catamaran', sans-serif;
+}
